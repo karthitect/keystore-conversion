@@ -1,5 +1,7 @@
 ## Overview
-When using a custom keystore with Kinesis Data Analytics for Flink, the keystore format needs to be JKS, as opposed to PKCS12 (you'll get an "invalid keystore format" error if you supply a PKCS12 formatted keystore). This howto describes the steps for converting a PKCS12 formatted keystore to JKS.
+When using a custom keystore with Kinesis Data Analytics for Flink, the keystore format needs to be JKS, as opposed to PKCS12 (you'll get an "invalid keystore format" error if you supply a PKCS12 formatted keystore). This HOWTO describes the steps for converting a PKCS12 formatted keystore to JKS.
+
+NOTE: This HOWTO is meant to accompany the [kda-flink-custom-keystore](https://github.com/karthitect/kda-flink-custom-keystore) sample code.
 
 ### The `keytool` utility
 

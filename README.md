@@ -5,6 +5,8 @@ When using a custom keystore with Kinesis Data Analytics for Flink, the keystore
 
 The [`keytool`](https://docs.oracle.com/javase/8/docs/technotes/tools/unix/keytool.html) utility helps manage keystores used in Java environments, and comes bundled with standard JDK distributions.
 
+### Generating a keystore
+
 You can use `keytool` to generate keystores as shown in the example below:
 
 ```
@@ -26,7 +28,11 @@ Your keystore contains 1 entry
 ...
 
 ```
-As you can see, the keystore type is PKCS12. In order to be able to use this in KDA/Flink, we need to convert this to JKS using the command below:
+As you can see, the keystore type is PKCS12.
+
+### Converting from PKSC12 to JKS
+
+In order to be able to use this in KDA/Flink, we need to convert this to JKS using the command below:
 
 ```
 keytool -importkeystore -srckeystore keystore.jks -destkeystore keystorenew.jks -srcstoretype PKCS12 -deststoretype JKS -deststorepass [DEST_PASS]

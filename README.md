@@ -1,11 +1,11 @@
 ## Overview
-When using a custom keystore with Kinesis Data Analytics for Flink, the keystore format needs to be JKS, as opposed to PKCS12. This howto describes the steps for converting a PKCS12 formatted keystore to JKS.
+When using a custom keystore with Kinesis Data Analytics for Flink, the keystore format needs to be JKS, as opposed to PKCS12 (you'll get an "invalid keystore format" error if you supply a PKCS12 formatted keystore). This howto describes the steps for converting a PKCS12 formatted keystore to JKS.
 
 ### The `keytool` utility
 
-The [`keytool`](https://docs.oracle.com/javase/8/docs/technotes/tools/unix/keytool.html) utility helps manage keystores used in Java environments. This utility is provided with standard JDK distributions.
+The [`keytool`](https://docs.oracle.com/javase/8/docs/technotes/tools/unix/keytool.html) utility helps manage keystores used in Java environments, and comes bundled with standard JDK distributions.
 
-This tool is often used to generate keystores as show below:
+You can use `keytool` to generate keystores as shown in the example below:
 
 ```
 > keytool -genkey -alias domain -keyalg RSA -validity 365 -keystore keystore.jks
